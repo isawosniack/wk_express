@@ -4,7 +4,7 @@ const db = require('../db/db'); // Import the database connection
 
 // GET artworks
 router.get('/', (req, res) => {
-  db.all('SELECT * FROM ArtworkType', [], (err, rows) => {
+  db.all('SELECT * FROM CategoryType', [], (err, rows) => {
     if (err) {
       return res.status(500).json({ error: err.message });
     }

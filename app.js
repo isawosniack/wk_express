@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const artworkRouter = require('./routes/artwork');
 const artworkTypeRouter = require('./routes/artworkType');
+const artworkCategoryRouter = require('./routes/artworkCategory');
 
 const app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/artworks', artworkRouter);
-app.use('/api/artworkType', artworkTypeRouter);
+app.use('/api/artworks/type', artworkTypeRouter);
+app.use('/api/artworks/category', artworkCategoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
